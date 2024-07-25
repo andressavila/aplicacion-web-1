@@ -6,12 +6,13 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './login.component.html',
 })
-export class LoginComponent {
+export default class LoginComponent {
 
-titulo ='Industrial Aceitera de Casanare';
-login(){
-  alert("credencailes correctas")
+  titulo= 'Industrial Aceitera de Casanare';
 
-}
+  login(){
+    alert("credenciales correctas");
+    
+  }
 
 }

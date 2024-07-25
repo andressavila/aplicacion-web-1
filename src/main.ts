@@ -3,8 +3,9 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import 'zone.js';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { RouterOutlet } from '@angular/router';
-
-
+import { provideRouter } from '@angular/router';
+import { routes } from './routes';
+import { provideClientHydration } from '@angular/platform-browser';
 
 
 
@@ -23,5 +24,5 @@ export class App {
 }
 
 bootstrapApplication(App, {
-  providers: [provideAnimationsAsync()]
+  providers: [provideAnimationsAsync(),provideRouter(routes),provideClientHydration()]
 });
