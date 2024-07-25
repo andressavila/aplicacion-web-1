@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  public footer ='company | Industrial Aceitera de Casanare '
+
 }
