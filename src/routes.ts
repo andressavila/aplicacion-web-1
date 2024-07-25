@@ -15,13 +15,13 @@ export const routes: Routes = [
         path:'***', loadComponent:() => import('./login/login.component')
       },
 
-      {
-        path:'dashboard', loadComponent:()=> import('./dashboard/dashboard.component'),
-        children:[
-          
+      //{
+       // path:'dashboard', loadComponent:()=> import('./dashboard/dashboard.component'),
+        //children:[
 
-        ]
-      }
+
+        //]
+      //}
 
       
 ];
