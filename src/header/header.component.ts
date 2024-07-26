@@ -9,12 +9,13 @@ import {ChangeDetectorRef, OnDestroy} from '@angular/core';
 import {MediaMatcher}from'@angular/cdk/layout'
 import {MatMenuModule} from '@angular/material/menu';
 import LoginComponent from '../login/login.component';
+import EntradasComponent from '../entradas/entradas.component';
 
  const  material_desing =[ MatToolbarModule,MatIconModule,MatButtonModule,MatSidenavModule,MatListModule,MatMenuModule]
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [material_desing, RouterLink, RouterOutlet,LoginComponent],
+  imports: [material_desing, RouterLink, RouterOutlet,LoginComponent,EntradasComponent],
   templateUrl: './header.component.html',
  
 })
