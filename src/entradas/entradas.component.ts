@@ -20,7 +20,7 @@ registerLocaleData(localEs)
 @Component({
   selector: 'app-entradas',
   standalone: true,
-  imports: [material_desing],
+  imports: [material_desing, DatePipe],
   templateUrl: './entradas.component.html',
 })
 export default class EntradasComponent  {
@@ -28,7 +28,7 @@ export default class EntradasComponent  {
 
   fecha : Date= new Date();
 
-
+  time : Date = new Date();
 
 
 
