@@ -51,7 +51,7 @@
                                         </mat-sidenav-content>
                         </mat-sidenav-container>
                     -->
-<mat-toolbar class="border-b-2 border-blue-600">
+<mat-toolbar role="heading" class="border-b-2 border-blue-600 m-0 p-0">
     <button  mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
     <span class="ml-8 text-sm font-sans  font-bold flex-auto">{{empresa}}</span>
     <div class="  relative ">
@@ -79,7 +79,7 @@
      </div>
 </mat-toolbar>
                     
-                    <mat-sidenav-container style="background: rgb(174, 211, 233); " >
+                    <mat-sidenav-container style="background: rgb(174, 211, 233); " class="m-0 p-0" >
                         <mat-sidenav #snav  opened="true" mode="side" class="m-1">
                             <mat-nav-list >
                                 <span class="ml-2  text-black font-bold">Control Acceso</span>
@@ -95,11 +95,11 @@
                             </mat-nav-list>
                         </mat-sidenav>
                         <mat-sidenav-content class="m-2">
-                            <div class="text-center" style="min-height: 800px;">
+                            <div class="text-center" style="min-height: 550px;">
                                 <router-outlet></router-outlet>
                             </div>
                         </mat-sidenav-content>
                     </mat-sidenav-container>
-                <mat-toolbar  class="border-t-2 border-blue-600 grid justify-items-center">
-                    <span >{{empresa}}</span>
+                <mat-toolbar  class="border-t-2 border-blue-600 flex justify-center m-0 p-0">
+                    <span class="text-sm">{{empresa}}</span>
                 </mat-toolbar>

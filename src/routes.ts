@@ -20,7 +20,8 @@ export const routes: Routes = [
         children:[
           {
             path:'entradas', loadComponent:()=> import('./entradas/entradas.component'),
-          }
+          },
+          
 
           
 
