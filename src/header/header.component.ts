@@ -15,7 +15,7 @@ import EntradasComponent from '../entradas/entradas.component';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [material_desing, RouterLink, RouterOutlet,LoginComponent,EntradasComponent],
+  imports: [material_desing, RouterLink, RouterOutlet],
   templateUrl: './header.component.html',
  
 })
@@ -36,7 +36,7 @@ export class HeaderComponent  {
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
   
-  shouldRun = true
+ 
 
 
 
