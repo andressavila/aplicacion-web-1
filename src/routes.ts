@@ -17,10 +17,11 @@ export const routes: Routes = [
 
       {
        path:'dashboard', loadComponent:()=> import('./dashboard/dashboard.component'),
-        //children:[
+        children:[
 
+          
 
-        //]
+        ]
       }
 
       

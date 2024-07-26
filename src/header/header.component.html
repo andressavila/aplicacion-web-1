@@ -1,10 +1,10 @@
-<!--se puede color el color en el codigo de clases de toolbar pero no me deja colocarlo-->
+<!--se puede color el color en el codigo de clases de toolbar pero no me deja colocarlo
 
 <mat-toolbar class="border-b-2 border-blue-600 ">
     <button mat-icon-button color="primary" (click)="drawer .toggle()" >
         <mat-icon >menu</mat-icon>
     </button>
-    <span class="flex-auto"></span>
+    <span class="flex-auto"></span>-->
     <!--<div class=" relative">
         <div class="p-1 bg-white rounded-full focus:outline-none focus:ring">
             <img class="w-8 h-8 rounded-full" src="https://laravelui.spruko.com/tailwind/ynex/build/assets/images/faces/9.jpg" alt=""/>
@@ -15,13 +15,14 @@
     <div class="p-2 md:block text-left items-center">
         <span class="text-sm font-bold text-gray-300 cursor-pointer">Raul Perez Mesa</span>
         <p class="text-xs text-gray-300 cursor-pointer text-center">Administrador</p>
-    </div>--->
+    </div>
 
 
     
 </mat-toolbar >
+<--
     <mat-drawer-container  class="border-x-1 border-blue-600 w-48">
-    <mat-drawer #drawer opened="true" mode="over" ><!--hay varios  estados del toggle de comandos para integrar push, side,over , y las posiciones de control de la barra lateral del componente-->
+    <mat-drawer #drawer opened="true" mode="over" >-hay varios  estados del toggle de comandos para integrar push, side,over , y las posiciones de control de la barra lateral del componente
         <mat-nav-list>
             <span class="ml-2  text-black">Control Acceso</span>
             <mat-list >
@@ -45,7 +46,7 @@
         </div>
     </mat-drawer-content>
     </mat-drawer-container>
-<mat-toolbar class=" border-t-2 border-blue-600 absolute" >{{footer}}</mat-toolbar>
+<mat-toolbar class=" border-t-2 border-blue-600 absolute" >{{footer}}</mat-toolbar>-->
 <!---
 <mat-sidenav-container autosize >
   <mat-sidenav #sidenav mode="over" opened="true" >
@@ -73,4 +74,63 @@
 
 
 --->
-   
+   <!---haciendo una barra resposibe para dispositivos moviles -->
+
+
+   <div class="flex-col absolute " [class.example-is-mobile]="mobileQuery.matches">
+            <mat-toolbar class="fixed border-b-2 border-blue-500">
+            <button  mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+            <span class="ml-8 text-sm font-sans  font-bold flex-auto">{{empresa}}</span>
+                                   <div class="  relative ">
+                                        <button mat-fab-button [matMenuTriggerFor]="beforeMenu" >                                      
+                                                    <img class="w-8 h-8 rounded-full" src="https://laravelui.spruko.com/tailwind/ynex/build/assets/images/faces/9.jpg" alt=""/>
+                                                    <div class="top-0 left-7 absolute w-3 h-3 bg-lime-400 border-2 border-white rounded-full animate-ping"></div>
+                                                    <div class="top-0 left-7 absolute w-3 h-3 bg-lime-500 border-2 border-white rounded-full"></div>
+                                        </button>
+                                        <mat-menu #beforeMenu="matMenu" xPosition="before">
+                                            <button mat-menu-item>
+                                            <mat-icon>admin_panel_settings</mat-icon>
+                                            <span>Administrador</span>
+                                            </button>
+                                            <mat-divider></mat-divider>
+                                            <button mat-menu-item>
+                                            <mat-icon>settings</mat-icon>
+                                            <span>Ajustes</span>
+                                            </button>
+                                          
+                                                <button mat-menu-item>
+                                                    <mat-icon>logout</mat-icon>
+                                                    <span>Cerrar Session</span>
+                                                </button>
+                                        </mat-menu>
+                                    </div>
+            </mat-toolbar >
+                            <mat-sidenav-container  class="flex-auto marker:"
+                                                [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+                            <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                                        [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+                                    <mat-nav-list class="justify-items-center">
+                                        <span class="ml-2  text-black font-bold">Control Acceso</span>
+                                        <mat-list >
+                                            <button mat-button  routerLink="dashboard" > <mat-icon>home</mat-icon>Inicio</button>
+                                        </mat-list>
+                                        <mat-list>
+                                            <button mat-button  routerLink="entradas"> <mat-icon>person</mat-icon>Entrada Personal</button>
+                                        </mat-list>
+                                        <mat-list>
+                                            <button mat-button routerLink="salidas"> <mat-icon>group</mat-icon>Salida Personal</button>
+                                        </mat-list>
+                                        <span class="ml-2  text-black font-bold">Control Session</span>
+                                        <mat-list>
+                                         <button mat-button routerLink="login"> <mat-icon>logout</mat-icon>Cerrar Session</button>
+                                        </mat-list>
+                                    </mat-nav-list>
+                                    </mat-sidenav>
+                                        <mat-sidenav-content>
+                                                    <router-outlet></router-outlet>
+                                        </mat-sidenav-content>
+                        </mat-sidenav-container>
+     </div>
+     <mat-toolbar class="border-t-2 border-blue-500">
+        <span>{{empresa}}</span>
+     </mat-toolbar>
