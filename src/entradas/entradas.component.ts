@@ -8,9 +8,10 @@ import { DatePipe, formatDate } from '@angular/common';
 import { DatePipeConfig } from '@angular/common';
 import  localEs  from "@angular/common/locales/es";
 import {  registerLocaleData} from "@angular/common";
+import {MatDialogModule} from '@angular/material/dialog';
 
 
-const material_desing = [MatToolbar,MatButtonModule,MatIconModule,MatTooltip,MatCardModule]
+const material_desing = [MatToolbar,MatButtonModule,MatIconModule,MatTooltip,MatCardModule,MatDialogModule]
 
 registerLocaleData(localEs)
 
