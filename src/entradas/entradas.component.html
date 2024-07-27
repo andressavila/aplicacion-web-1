@@ -4,8 +4,8 @@
         <div class="border-2 border-blue-400 m-2 px-2 rounded-lg hover:bg-blue-300 cursor-pointer">
             <span class=" text-sm font-bold text-center">{{ fecha | date:'medium'}}</span>
         </div>
-            <button mat-button matTooltip="Registrar Personal" ><mat-icon >person_add</mat-icon></button>
-        </mat-toolbar>
+            <button mat-button matTooltip="Registrar Personal"  (click)="opendialog()"><mat-icon >person_add</mat-icon></button>
+        </mat-toolbar>        
         <div class="mt-2">
             <mat-card>
                 <mat-card-header>

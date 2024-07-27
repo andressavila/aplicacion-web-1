@@ -8,7 +8,10 @@ import { DatePipe, formatDate } from '@angular/common';
 import { DatePipeConfig } from '@angular/common';
 import  localEs  from "@angular/common/locales/es";
 import {  registerLocaleData} from "@angular/common";
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { Dialog } from '@angular/cdk/dialog';
+import { DialogService } from '../servicios/dialog.service';
+import { DialogComponent } from '../dialog/dialog.component';
 
 
 const material_desing = [MatToolbar,MatButtonModule,MatIconModule,MatTooltip,MatCardModule,MatDialogModule]
@@ -31,6 +34,15 @@ export default class EntradasComponent  {
 
   time : Date = new Date();
 
+constructor( private dialogservic: DialogService){}
 
-
+opendialog(){
+  this.dialogservic.opendialog({
+    title:'Registro de Personal',
+    content:'contenido de personal'
+  });
 }
+  }
+
+
+
